@@ -1,0 +1,462 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'portapp/r.jpg' %}">
+
+    <!--CSS for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Rahul Kumar</title>
+</head>
+
+<body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img class="brandLogo" src="{% static 'portapp/r.jpg' %}"
+                    style="width:30px" alt="My image"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#tskill">Technical Skills</a></li>
+                            <li><a class="dropdown-item" href="#interest">Interests</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#achievement">Achievements</a></li>
+                            <li><a class="dropdown-item" href="#feedback">Give Feedback</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>   
+                </form>   -->
+                <a href="./admin"><button class="btn btn-outline-light">Admin Panel</button></a>
+            </div>
+        </div>
+    </nav>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Congratulations, </strong> {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!--Intro card-->
+    <div class="container">
+        <div class="card">
+            <div class="card-body text-center" display="inline">
+                <p class="card-text">
+                <h4>Hello, Welcome to my Portfolio Website</h4>
+                <img src="{% static 'portapp/rahul1.jpg' %}" alt="myImage"
+                    style="border: 1.5px solid rgb(44, 44, 44); border-radius: 75%; margin-bottom: 10px;">
+                <br>
+                <p>
+                    My name is <strong>RAHUL KUMAR</strong><br>
+                    I am a second year B. Tech. student at <em>IIT INDORE</em>. I am a fast learner & always
+                    enthusiastic
+                    about learning new technologies and implementing them in real life projects
+                    as well. My technical domains of interests are Competitive Coding, Web Developement,
+                    Machine Learning, Digital Electronics, Computer Programming.<br>
+                <p id="contact"></p>
+                Feel free to explore my Website & don't hesitate to contact me.
+                </p>
+                <a href="https://github.com/rahulrj1" target="_blank"><button type="button" class="btn btn-dark my-1"><i
+                            class="fa fa-github" style="font-size:24px"></i> github.com/rahulrj1</button></a>
+                <a href="https://www.linkedin.com/in/rahul-kumar-517349201/" target="_blank"><button type="button"
+                        class="btn btn-dark my-1"><i class="fa fa-linkedin-square" style="font-size:24px"></i>
+                        /rahul-kumar-517349201</button></a>
+                <a href="mailto:rahuljas2050@gmail.com"><button type="button" class="btn btn-dark my-1"><i
+                            class="fa fa-envelope" style="font-size:24px"></i>
+                        rahuljas2050@gmail.com</button></a>
+                <button type="button" class="btn btn-dark my-1"><i class="fa fa-mobile-phone"
+                        style="font-size:24px"></i>
+                    +91 8058992101</button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--Carousel-->
+    <div id="carouselExampleDark" class="carousel carousel-light slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{% static 'portapp/img1.jpg' %}" class="d-block w-100" alt="img1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Competitive Coding</h2>
+                    <p>
+                        I have a deep interest in the fields of Competitive Coding. I am currently learning
+                        more data-types & algorithms. I practice regularly by giving contests on
+                        Competitive Coding platforms such as Codechef & Codeforces in C++.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static 'portapp/img2.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Software Developement</h2>
+                    <p>Apart from Competitive Coding, I also have interest in Developement Field. I have
+                        a keen knowledge of HTML, CSS and basic knowledge of JavaScript, Python. Currently,
+                        I am learning Back-end Developement in Django.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'portapp/img3.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Machine Learning</h2>
+                    <p>
+                        I also have a deep interst in the fields of AI & ML. I have used MATLAB to build
+                        a beginner level KNN model to differentiate different letters on the basis of their
+                        Aspect Ratio property that worked fine for more than 80% of the test data.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--Aobut-->
+    <div class="card my-4" id="about">
+        <div class="card-header text-center">
+            <h5>ABOUT ME</h5>
+        </div>
+        <div class="card-body">
+            <blockquote>
+                <p class="px-4">
+                    I am <strong>Rahul Kumar</strong> from Hajipur, Bihar. I am an UG Electrical Engineer at
+                    <a href="https://www.iiti.ac.in" target="_blank"><button class="btn bg-light btn-sm">IIT
+                            INDORE</button></a>.
+                    <br>
+                    Whoevere you are, thank you for visiting my portfolio website!<br>
+                    I love sketching portraits & painting. I also have a keen interest in creative writing so
+                    I write creative contents in my spare time. I am currently exploring the ways in which
+                    electrical engineering concepts along with the help of computer science engineering concepts can be
+                    implemented in real lives
+                    & bring revolution.
+                    <br>I have a deep interest in Chess & I am also the part of the chess club of IITI - <a
+                        href="http://people.iiti.ac.in/~sports/chess-website/index.html" target="_blank"><button
+                            class="btn bg-light btn-sm">THE BERSERKERS</button></a>.
+
+                    <br>Don't hesitate to leave a feedback, send email or send a connection request on linkedin.
+                </p>
+            </blockquote>
+        </div>
+    </div>
+
+    <!--Educational Details-->
+    <div class="card mb-3 mt-3">
+        <div class="card-header text-center">
+            <h5>EDUCATIONAL DETAILS</h5>
+        </div>
+        <div class="container my-4">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <h5 class="card-title"><em>Indian Institue of Technology Indore '23</em></h5>
+                    <p class="card-text">B. Tech. in Electrical & Electronics Engineering (8.55 CGPA)</p>
+                    <p class="card-text">
+                        Key Courses Taken:
+                    <ul>
+                        <li><b>Electrical Engineering:</b>
+                            <ul>
+                                <li>Signals & Systems</li>
+                                <li>Electrical Machines & Power Electronics</li>
+                                <li>Analog Circuits</li>
+                                <li>Digital Systems</li>
+                                <li>Network Theory</li>
+                                <li>Electronic devices</li>
+                                <li>Introduction to Electrical Systems</li>
+                                <li>Basic Electrical Engineering</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Mathematics:</b>
+                            <ul>
+                                <li>Numerical Methods</li>
+                                <li>Complex Analysis & Differential Equations - II</li>
+                                <li>Linear Algebra & Differential Equations - I</li>
+                                <li>Real Analysis</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <b>Computer Science:</b>
+                            <ul>
+                                <li>Computer Programming</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner my-2">
+                            <div class="carousel-item active">
+                                <img src="{% static 'portapp/clg1.jpg' %}" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'portapp/clg2.jpg' %}" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'portapp/clg3.jpg' %}" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <div class="card text-center">
+                        <h4 class="card-header" style="font-family:'Times New Roman', Times, serif">IIT INDORE</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+
+        </div>
+    </div>
+
+    <!--Quote-->
+    <div class="container my-4">
+        <div class="card">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0 text-center">
+                    <p>Failure is the most important part of a journey of success. We learn something new everytime we
+                        fail & move one step towards our goal. So, Never stop exploring new things because
+                        you will fail hundreds of time, learn from those failures & eventually become successful.
+                    </p>
+                    <footer class="blockquote-footer">said by <cite title="Source Title">Rahul Kumar</cite></footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <!--Skills and Interests-->
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col" id="tskill">
+                <div class="card">
+                    <img src="{% static 'portapp/img5.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Technical Skills</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>C++</li>
+                            <li>MATLAB</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Bootstrap</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="interest">
+                <div class="card">
+                    <img src="{% static 'portapp/img4.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Interests</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>Chess</li>
+                            <li>Sketching</li>
+                            <li>Creative Writing</li>
+                            <li>Painting</li>
+                            <li>Competitive Coding</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PORs-->
+    <div class="container my-5">
+        <div class="card-header">
+            <h4>Positions of Responsibilities</h4>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>Core Member of Kalakriti CLub</em></td>
+                    <td>Helped in organizing various events, worked in various team projects, explored as well as
+                        learned various new art forms</td>
+
+                </tr>
+                <tr>
+                    <td><em>Core Member of Dramatics CLub</em></td>
+                    <td>Helped in the organization of & also have been a part of the scriptwriters of the successful
+                        stage play ANJAAN</td>
+
+                </tr>
+                <tr>
+                    <td><em>Core Member of Chess CLub</em></td>
+                    <td>Participated in various chess events like IRIS Ranbhoomi (conducted by IIM Indore) & All IITs
+                        Chess Club Tounaments</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--Achievements-->
+    <h4 id="achievement" style="text-align: center; background-color: rgb(241, 240, 240); margin: 0; padding: 15px">
+        <em>ACHIEVEMENTS</em>
+    </h4>
+
+    <div class="card-group">
+        <div class="card">
+            <img src="{% static 'portapp/img6.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">MCM Scholarship</h5>
+                <p class="card-text">Have been awarded the MCM(Merit-cum-Means) Schoalrship in the college which is
+                    given to top 1.5% students</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'portapp/img7.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Chess Competition</h5>
+                <p class="card-text">Secured first rank in the a chess competition with a score of 7 out of 7 organized
+                    by the chess club of IIT Indore</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'portapp/img8.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Cometitive Exams</h5>
+                <p class="card-text">Cleared JEE Main 2018, JEE Main 2019 & JEE Advanced 2019 (AIR 7014)</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Feedback Form-->
+    <div class="card my-4" id="feedback">
+        <div class="card-header">
+            <h5>Give Your Valuable Feedback</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/">
+                {% csrf_token %}
+
+                {{form.as_p}}
+                <div class="mb-3">
+                    <p> <label for="id_pname" class="form-label">Full Name</label>
+                        <input type="text" name="pname" class="form-control" id="id_pname">
+                    </p>
+                    <p> <label for="id_pemail" class="form-label">Email</label>
+                        <input type="email" name="pemail" class="form-control" id="id_pemail">
+                    </p>
+                </div>
+                <div class="mb-3">
+                    <p> <label for="id_psugg" class="form-label">Feedback & Suggestions</label>
+                        <textarea name="psugg" class="form-control" id="id_psugg" rows="3"></textarea>
+                    </p>
+                </div>
+
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+
+    <div class="container my-2">
+        <marquee behavior="alternate" scrollamount=20><img src="{% static 'portapp/r.jpg' %}" width="115px"><br>
+            <h4>Thank You</h4>
+        </marquee>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2021 Copyright:
+            <strong>RAHUL KUMAR</strong>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
